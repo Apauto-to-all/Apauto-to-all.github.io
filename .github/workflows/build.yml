@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: 构建和部署
 
 on:
   push:
@@ -8,23 +8,34 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # 允许操作仓库内容
+
     steps:
-      - name: Checkout 🛎️
+      - name: 检出代码 🛎️
         uses: actions/checkout@v3
 
-      - name: Setup Node.js ⚙️
+      - name: 设置 Node.js 环境 ⚙️
         uses: actions/setup-node@v3
         with:
           node-version: "22"
           cache: "npm"
 
-      - name: Install and Build 🔧
+      - name: 安装依赖并构建 🔧
         run: |
           npm ci
           npm run build
 
-      - name: Deploy to GitHub Pages 🚀
+      - name: 部署到 GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist
-          branch: gh-pages
+          folder: dist # 要部署的文件夹
+          branch: gh-pages # 部署的目标分支
+          token: ${{ secrets.GITHUB_TOKEN }} # 使用 GitHub 自动提供的令牌
+          clean: true # 在部署前清理目标分支
+          commit-message: "网站更新 [skip ci]" # 自定义提交消息
+          single-commit: true # 保持历史简洁，只保留一个提交
+
+      - name: 部署完成通知 📢
+        if: success()
+        run: echo "网站部署完成！请访问 https://apauto-to-all.github.io 查看结果"
