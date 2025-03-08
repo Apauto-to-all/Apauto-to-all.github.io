@@ -29,7 +29,7 @@ import zhCn from 'element-plus/es/locale/lang/zh-cn'
       <el-footer class="app-footer">
         <div class="footer-content">
           <div class="footer-copyright">
-            <p>© 2025 Apauto-to-all</p>
+            <p>© 2025 Apauto-to-all. All rights reserved.</p>
           </div>
           <div class="footer-links">
             <a href="https://github.com/apauto-to-all" target="_blank" class="footer-link">
