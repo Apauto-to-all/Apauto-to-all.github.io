@@ -36,7 +36,6 @@
           <h3>后端开发</h3>
           <div class="skill-tags">
             <el-tag effect="plain">Python</el-tag>
-            <el-tag effect="plain">数据库设计</el-tag>
           </div>
         </div>
       </div>
@@ -54,9 +53,11 @@
     <div class="about-section fade-in">
       <h2 class="section-title">联系方式</h2>
       <div class="contact-methods">
-        <el-button class="gradient-outline-btn" round>
-          <i class="el-icon-message"></i> 无
-        </el-button>
+        <a href="mailto:apautotoall@outlook.com" class="mail-link">
+          <el-button class="gradient-outline-btn" round>
+            <i class="el-icon-message"></i> apautotoall@outlook.com
+          </el-button>
+        </a>
       </div>
     </div>
   </div>
@@ -120,6 +121,10 @@
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 2rem;
+}
+
+.mail-link {
+  text-decoration: none;
 }
 
 @media (max-width: 768px) {

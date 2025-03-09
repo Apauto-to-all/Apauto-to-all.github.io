@@ -16,6 +16,7 @@ import zhCn from 'element-plus/es/locale/lang/zh-cn'
         </div>
         <el-menu mode="horizontal" :ellipsis="false" class="app-menu" router>
           <el-menu-item index="/">首页</el-menu-item>
+          <el-menu-item index="/portfolio">作品集</el-menu-item>
           <el-menu-item index="/about">关于我</el-menu-item>
         </el-menu>
       </el-header>

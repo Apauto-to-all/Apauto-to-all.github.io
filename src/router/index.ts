@@ -14,6 +14,26 @@ const router = createRouter({
       name: 'about',
       component: () => import('@/views/AboutView.vue'),
     },
+    {
+      path: '/portfolio',
+      children: [
+        {
+          path: '',
+          name: 'Portfolio',
+          component: () => import('@/views/portfolio/PortfolioHome.vue'),
+        },
+        // {
+        //   path: 'category/:category',
+        //   name: 'ProjectCategory',
+        //   component: () => import('@/views/portfolio/ProjectCategory.vue'),
+        // },
+        {
+          path: ':projectId',
+          name: 'ProjectDetail',
+          component: () => import('@/views/portfolio/ProjectDetail.vue'),
+        }
+      ]
+    },
     // 添加404路由，必须放在最后一个
     {
       path: '/:pathMatch(.*)*',
