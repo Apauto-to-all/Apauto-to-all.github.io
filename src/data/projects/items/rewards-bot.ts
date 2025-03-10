@@ -52,7 +52,7 @@ const project: Project = {
   },
   buy_links: {
     // afdian: "https://afdian.net/item/rewardsbot",
-    // mbd: "https://www.dreamsvault.me/rewardsbot",
+    mbd: "https://mbd.pub/o/bread/aJaTlJpw",
   },
 };
 
