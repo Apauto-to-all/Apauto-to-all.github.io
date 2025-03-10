@@ -1,4 +1,37 @@
 <script setup lang="ts">
+import { onMounted } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+// 增强版 URL 自动修复函数
+onMounted(() => {
+  // 获取当前URL信息
+  const path = window.location.pathname;
+  const hash = window.location.hash;
+  const search = window.location.search;
+
+  // 如果路径不是根路径且hash为空或只是#/，则需要修复
+  if ((path !== '/' && path !== '/index.html') &&
+    (hash === '' || hash === '#/' || hash === '#')) {
+
+    // 提取实际路径（移除开头的斜杠）
+    const realPath = path.replace(/^\//, '');
+
+    // 忽略静态资源路径
+    if (realPath.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)$/i)) {
+      return;
+    }
+
+    // 使用 history.replaceState 避免在历史记录中创建额外条目
+    window.history.replaceState(null, '', '/');
+
+    // 延迟执行以确保路由已初始化
+    setTimeout(() => {
+      router.push('/' + realPath + search);
+    }, 10);
+  }
+});
 </script>
 
 <template>
