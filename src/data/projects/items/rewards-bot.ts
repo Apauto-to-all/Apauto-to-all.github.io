@@ -1,10 +1,6 @@
 import { type Project } from "../model";
 // 在文件顶部导入图片
-import image from "@/assets/projects/rewards-bot/image.png";
-import image1 from "@/assets/projects/rewards-bot/image1.png";
-import image2 from "@/assets/projects/rewards-bot/image2.png";
-import image3 from "@/assets/projects/rewards-bot/image3.png";
-import image4 from "@/assets/projects/rewards-bot/image4.png";
+const image = "https://pic1.imgdb.cn/item/67ce5789066befcec6e24e5f.png";
 
 const project: Project = {
   id: "rewards-bot",
@@ -17,7 +13,13 @@ const project: Project = {
 
   我已经兑换了350元卡卷，你还在等什么？本软件为付费软件，支持作者持续更新和维护，感谢支持！`,
   thumbnail: image,
-  images: [image, image1, image2, image3, image4],
+  images: [
+    image,
+    "https://pic1.imgdb.cn/item/67ce57d3066befcec6e24e71.png",
+    "https://pic1.imgdb.cn/item/67ce57d5066befcec6e24e74.png",
+    "https://pic1.imgdb.cn/item/67ce57d4066befcec6e24e73.png",
+    "https://pic1.imgdb.cn/item/67ce57d5066befcec6e24e75.png",
+  ],
   category: "desktop",
   techStack: ["python", "tkinter", "playwright"],
   features: [
@@ -42,7 +44,8 @@ const project: Project = {
     github: null,
   },
   download_links: {
-    lanzou: { // 蓝奏云下载链接
+    lanzou: {
+      // 蓝奏云下载链接
       url: "https://wwaw.lanzoub.com/b00mp9t7hg",
       extractCode: "55t1",
     },
