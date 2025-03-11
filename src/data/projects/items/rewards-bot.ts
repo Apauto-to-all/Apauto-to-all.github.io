@@ -51,7 +51,7 @@ const project: Project = {
     },
   },
   buy_links: {
-    // afdian: "https://afdian.net/item/rewardsbot",
+    afdian: "https://afdian.com/item/f34212f6fe5d11ef811152540025c377",
     mbd: "https://mbd.pub/o/bread/aJaTlJpw",
   },
 };
